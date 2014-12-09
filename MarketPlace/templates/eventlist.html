@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/css/eventlist.css">
+<script src="/static/js/eventlist.js"></script>
+</head>
+<body>
+
+<table><tr><td>Title</td><td>Post By</td></tr>
+
+{% for event in events %}
+  <tr><td>{{ event.event_title }}</td>
+        <td>{{ event.profile.first_name }}</td></tr>
+{% endfor %}
+</table>
+</body>
+</html>
