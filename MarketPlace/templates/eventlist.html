@@ -1,15 +1,29 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/static/css/eventlist.css">
-<script src="/static/js/eventlist.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/eventlist.css">
+<!-- Bootstrap -->
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="/static/js/eventlist.js"></script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/dist/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
-<table><tr><td>Title</td><td>Post By</td></tr>
+<table><tr><td>Title</td><td>Post By</td><td>Geo_lon</td></tr>
 
 {% for event in events %}
-  <tr><td>{{ event.event_title }}</td>
-        <td>{{ event.profile.first_name }}</td></tr>
+  <tr>
+  	<td>{{ event.event_title }}</td>
+    <td>{{ event.profile.first_name }}</td>
+    <td>{{ event.profile.geo_lon }}</td>
+  </tr>
+
 {% endfor %}
 </table>
 </body>
